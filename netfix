@@ -1,7 +1,5 @@
-#!/bin/python3
-import os
-import time
+#!/bin/sh
 
-os.system("sudo arp -d 192.168.0.1")
-time.sleep(2)
-os.system("sudo ip neigh change 192.168.0.1 lladdr EC:08:6B:D8:C7:D8 dev wlp2s0 nud perm")
+sudo arp -d 192.168.0.1
+sleep 2
+sudo ip neigh change 192.168.0.1 lladdr EC:08:6B:D8:C7:D8 dev wlp2s0 nud perm

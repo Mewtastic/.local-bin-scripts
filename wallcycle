@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+
+from astral import LocationInfo
+import datetime
+from astral.sun import sun
+import subprocess
+import time
+import pytz
+
+utc=pytz.UTC
+
+def change_wallpaper(style: str):
+    wallpaper_file = "/home/mewtastic/Pictures/Wallpapers"
+    if style == "night":
+        wallpaper_file = f"{wallpaper_file}/night.jpg"
+    else:
+        wallpaper_file = f"{wallpaper_file}/day.jpg"
+    subprocess.run(["/usr/bin/xwallpaper", "--zoom", f"{wallpaper_file}"])
+
+if __name__ == "__main__":
+    city = LocationInfo("Portland", "Oregon", "US/Pacific", 45.515, -122.679)
+    s = sun(city.observer, date=datetime.datetime.today())
+    #available times for sun = sunrise, noon, sunset, dusk
+    # so you could go even more specific with wallpapers
+
+    while True:
+        if datetime.datetime.now().replace(tzinfo=utc) < s["dusk"]:
+            change_wallpaper("day")
+        elif datetime.datetime.now().replace(tzinfo=utc) >= s["dusk"]:
+            change_wallpaper("night")
+        time.sleep(300)
