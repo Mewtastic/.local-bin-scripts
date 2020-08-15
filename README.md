@@ -37,6 +37,12 @@ Bypasses arp poisoning. For personal reasons
 ## netrevert
 Reverts network to how it was before the netfix command was run
 
+## picomstart
+Kills previous instances of picom and starts it again
+
+## polybar start
+Kills previous instances of polybar and starts it again
+
 ## Wallcycle
 Changes wallpaper between day and night according to sunset and sunrise.
 ### Dependencies:
