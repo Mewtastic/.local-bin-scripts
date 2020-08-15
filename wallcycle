@@ -6,15 +6,17 @@ from astral.sun import sun
 import subprocess
 import time
 import pytz
+from typing import Dict
 
 utc=pytz.UTC
 
 def change_wallpaper(style: str):
     wallpaper_file = "/home/mewtastic/Pictures/Wallpapers"
-    if style == "night":
-        wallpaper_file = f"{wallpaper_file}/night.jpg"
+    file_map: Dict[str, str] = {"night": "night.jpg", "day": "day.jpg"}
+    if style in file_map.keys():
+        wallpaper_file = f"{wallpaper_file}/{file_map[style]}"
     else:
-        wallpaper_file = f"{wallpaper_file}/day.jpg"
+        wallpaper_file = f"{wallpaper_file}/{file_map['night']}"
     subprocess.run(["/usr/bin/xwallpaper", "--zoom", f"{wallpaper_file}"])
 
 if __name__ == "__main__":
