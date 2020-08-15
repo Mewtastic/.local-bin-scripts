@@ -9,6 +9,7 @@ import pytz
 from typing import Dict
 
 utc=pytz.UTC
+current=None
 
 def change_wallpaper(style: str):
     wallpaper_file = "/home/mewtastic/Pictures/Wallpapers"
@@ -27,7 +28,11 @@ if __name__ == "__main__":
 
     while True:
         if datetime.datetime.now().replace(tzinfo=utc) < s["dusk"]:
-            change_wallpaper("day")
+            if current != "day":
+                change_wallpaper("day")
+                current = "day"
         elif datetime.datetime.now().replace(tzinfo=utc) >= s["dusk"]:
-            change_wallpaper("night")
+            if current != "night":
+                change_wallpaper("night")
+                current = "night"
         time.sleep(300)
