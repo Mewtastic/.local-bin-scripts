@@ -18,3 +18,6 @@ Bypasses arp poisoning. For personal reasons
 
 ## netrevert
 Reverts network to how it was before the netfix command was run
+
+## Wallcycle
+Changes wallpaper between day and night according to sunset and sunrise.
