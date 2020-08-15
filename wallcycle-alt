@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+from astral import LocationInfo
+import datetime
+from astral.sun import sun
+import subprocess
+import time
+import pytz
+from typing import Dict
+
+utc=pytz.UTC
+
+def change_wallpaper(style: str):
+    wallpaper_file = "/home/fr4nk/wallpaper-test/night.jpeg"
+    file_map: Dict[str, str] = {"night": "night.jpeg", "day": "day.jpeg"}
+    if style in file_map.keys():
+        wallpaper_file = f"{wallpaper_file}/{file_map[style]}"
+        
+    subprocess.run(["/usr/bin/xwallpaper", "--zoom", f"{wallpaper_file}"])
+
+if __name__ == "__main__":
+    city = LocationInfo("London", "England", "Europe/London", 51.5, -0.116)
+    s = sun(city.observer, date=datetime.datetime.today())
+    #available times for sun = sunrise, noon, sunset, dusk
+    # so you could go even more specific with wallpapers
+
+    while True:
+        if datetime.datetime.now().replace(tzinfo=utc) < s["dusk"]:
+            change_wallpaper("day")
+        elif datetime.datetime.now().replace(tzinfo=utc) >= s["dusk"]:
+            change_wallpaper("night")
+        time.sleep(300)
