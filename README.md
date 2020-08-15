@@ -54,13 +54,5 @@ Changes wallpaper between day and night according to sunset and sunrise.
 Thanks to Fr4nk from the TLG discord community for rewriting and adding functionality to my script!
 Here is his github account. https://github.com/fr4nk3n5731n
 
-## Wallcycle-alt
-Alternative to wallcycle. It has a slightly larger file size. If wallcycle doen't work for you try this alternate version.
-### Dependencies:
-#### Wallcycle's dependencies
-##### More Information
-Thanks again to Fr4nk
-https://github.com/fr4nk3n5731n
-
 # TODO
 Add a fade-in/out effect when transitioning between wallpapers in the wallcycle script
