@@ -46,3 +46,6 @@ Changes wallpaper between day and night according to sunset and sunrise.
 ##### xwallpaper
 ###### More Information
 Thanks to Frank from the TLG discord community for improving my script!
+
+# TODO
+Add a fade-in/out effect when transitioning between wallpapers in the wallcycle script
