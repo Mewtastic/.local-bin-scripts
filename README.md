@@ -51,14 +51,14 @@ Changes wallpaper between day and night according to sunset and sunrise.
 ##### pip3: pytz
 ##### xwallpaper
 ###### More Information
-Thanks to Frank from the TLG discord community for rewriting and adding functionality to my script!
+Thanks to Fr4nk from the TLG discord community for rewriting and adding functionality to my script!
 
 ## Wallcycle-alt
 Alternative to wallcycle. It has a slightly larger file size. If wallcycle doen't work for you try this alternate version.
 ### Dependencies:
 #### Wallcycle's dependencies
 ##### More Information
-Thanks again to Frank
+Thanks again to Fr4nk
 
 # TODO
 Add a fade-in/out effect when transitioning between wallpapers in the wallcycle script
