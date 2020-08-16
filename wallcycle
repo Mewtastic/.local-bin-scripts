@@ -23,15 +23,15 @@ def change_wallpaper(style: str):
 if __name__ == "__main__":
     city = LocationInfo("Portland", "Oregon", "US/Pacific", 45.515, -122.679)
     s = sun(city.observer, date=datetime.datetime.today())
-    #available times for sun = sunrise, noon, sunset, dusk
+    # available times for sun = sunrise, noon, sunset, dusk
     # so you could go even more specific with wallpapers
 
     while True:
-        if datetime.datetime.now().replace(tzinfo=utc) < s["dusk"]:
+        if datetime.datetime.now().replace(tzinfo=utc) < s["sunset"]:
             if current != "day":
                 change_wallpaper("day")
                 current = "day"
-        elif datetime.datetime.now().replace(tzinfo=utc) >= s["dusk"]:
+        elif datetime.datetime.now().replace(tzinfo=utc) >= s["sunset"]:
             if current != "night":
                 change_wallpaper("night")
                 current = "night"
