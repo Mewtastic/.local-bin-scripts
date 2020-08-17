@@ -8,7 +8,7 @@ import time
 import pytz
 from typing import Dict
 
-utc=pytz.UTC
+tz=pytz.timezone('US/Pacific')
 current=None
 
 def change_wallpaper(style: str):
@@ -23,15 +23,18 @@ def change_wallpaper(style: str):
 if __name__ == "__main__":
     city = LocationInfo("Portland", "Oregon", "US/Pacific", 45.515, -122.679)
     s = sun(city.observer, date=datetime.datetime.today())
-    # available times for sun = sunrise, noon, sunset, dusk
+    # Available times for sun = sunrise, noon, sunset, dusk
     # so you could go even more specific with wallpapers
 
     while True:
-        if datetime.datetime.now().replace(tzinfo=utc) < s["sunset"]:
-            if current != "day":
+        # Day approx: 8:00-19:59 thus it occurs on sunrise and before sunset
+        if datetime.datetime.now().replace(tzinfo=tz) >= s["sunrise"] and datetime.datetime.now().replace(tzinfo=tz) < s["sunset"]:
+            if current != "day": # Kept on a second line for code readability
                 change_wallpaper("day")
                 current = "day"
-        elif datetime.datetime.now().replace(tzinfo=utc) >= s["sunset"]:
+
+        # Night approx: 20:00-24:00 - 7:59 thus it occurs on sunset OR before sunrise
+        elif datetime.datetime.now().replace(tzinfo=tz) >= s["sunset"] or datetime.datetime.now().replace(tzinfo=tz) < s["sunrise"]:
             if current != "night":
                 change_wallpaper("night")
                 current = "night"
