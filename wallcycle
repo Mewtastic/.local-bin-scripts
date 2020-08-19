@@ -9,7 +9,6 @@ import pytz
 from typing import Dict
 
 tz=pytz.timezone('US/Pacific')
-current=None
 
 def change_wallpaper(style: str):
     wallpaper_file = "/home/mewtastic/Pictures/Wallpapers"
@@ -29,13 +28,9 @@ if __name__ == "__main__":
     while True:
         # Day approx: 8:00-19:59 thus it occurs on sunrise and before sunset
         if datetime.datetime.now().replace(tzinfo=tz) >= s["sunrise"] and datetime.datetime.now().replace(tzinfo=tz) < s["sunset"]:
-            if current != "day": # Kept on a second line for code readability
-                change_wallpaper("day")
-                current = "day"
+            change_wallpaper("day")
 
         # Night approx: 20:00-24:00 - 7:59 thus it occurs on sunset OR before sunrise
         elif datetime.datetime.now().replace(tzinfo=tz) >= s["sunset"] or datetime.datetime.now().replace(tzinfo=tz) < s["sunrise"]:
-            if current != "night":
-                change_wallpaper("night")
-                current = "night"
+            change_wallpaper("night")
         time.sleep(300)
