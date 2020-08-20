@@ -23,7 +23,6 @@ if __name__ == "__main__":
     city = LocationInfo("Portland", "Oregon", "US/Pacific", 45.515, -122.679)
     s = sun(city.observer, date=datetime.datetime.today())
     # Available times for sun = sunrise, noon, sunset, dusk
-    # so you could go even more specific with wallpapers
 
     while True:
         # Day approx: 8:00-19:59 thus it occurs on sunrise and before sunset
