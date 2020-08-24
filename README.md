@@ -31,6 +31,11 @@ A terminal based game I made
 ###### More Information
 Official repository: https://github.com/Mewtastic/Catching-Doctor-Ghost
 
+## lockscreen
+A custom lockscreen script
+### dependencies:
+##### xsecurelock
+
 ## netfix
 Bypasses arp poisoning. For personal reasons
 
