@@ -8,21 +8,21 @@ A proper fullscreen for BSPWM
 *	bsphide script
 *	bspunhide script
 #### More Information
-Taken from https://github.com/BrodieRobertson/scripts/tree/master/bspwm
+Taken from: https://github.com/BrodieRobertson/scripts/tree/master/bspwm
 
 ## bsphide
 Hides other windows and polybar
 ### Dependencies:
 *	BSPWM
 #### More Information
-Taken from https://github.com/BrodieRobertson/scripts/tree/master/bspwm
+Taken from: https://github.com/BrodieRobertson/scripts/tree/master/bspwm
 
 ## bspunhide
 Shows hidden windows and polybar
 ### Dependencies:
 *	BSPWM
 #### More Information
-Taken from https: https://github.com/BrodieRobertson/scripts/tree/master/bspwm
+Taken from: https://github.com/BrodieRobertson/scripts/tree/master/bspwm
 
 ## dr-ghost
 A terminal based game I made
