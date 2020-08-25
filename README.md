@@ -1,5 +1,5 @@
-# .local-bin-scripts
-My personal .local/bin scripts
+# scripts
+My personal ~/.local/bin scripts
 
 ## bspfullscreen
 A proper fullscreen for BSPWM
