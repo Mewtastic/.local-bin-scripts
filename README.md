@@ -1,3 +1,6 @@
+# THIS REPOSITORY IS NOW MERGED WITH MY DOTFILES REPOSITORY AND IS NOW ARCHIVED
+https://github.com/Mewtastic/dotfiles
+
 # scripts
 My personal ~/.local/bin scripts
 
