@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Pidswallow configuration
 export PIDSWALLOW_SWALLOW_COMMAND='bspc node $pwid --flag hidden=on'
 export PIDSWALLOW_VOMIT_COMMAND='bspc node $pwid --flag hidden=off'
