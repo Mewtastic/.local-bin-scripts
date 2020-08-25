@@ -45,8 +45,13 @@ Reverts network to how it was before the netfix command was run
 ## picomstart
 Kills previous instances of picom and starts it again
 
-## polybar start
+## polybarstart
 Kills previous instances of polybar and starts it again
+
+## swallow
+starts pidswallow
+### Dependencies:
+*	pidswallow
 
 ## Wallcycle
 Changes wallpaper between day and night according to sunset and sunrise.
